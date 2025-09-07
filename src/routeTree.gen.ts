@@ -14,7 +14,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as DeferredRouteImport } from './routes/deferred'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CafesIndexRouteImport } from './routes/cafes/index'
+import { Route as CafesIdRouteImport } from './routes/cafes/$id'
 import { ServerRoute as ApiCafesServerRouteImport } from './routes/api/cafes'
+import { ServerRoute as ApiCafesIdServerRouteImport } from './routes/api/cafes.$id'
 
 const rootServerRouteImport = createServerRootRoute()
 
@@ -33,61 +35,78 @@ const CafesIndexRoute = CafesIndexRouteImport.update({
   path: '/cafes/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CafesIdRoute = CafesIdRouteImport.update({
+  id: '/cafes/$id',
+  path: '/cafes/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCafesServerRoute = ApiCafesServerRouteImport.update({
   id: '/api/cafes',
   path: '/api/cafes',
   getParentRoute: () => rootServerRouteImport,
 } as any)
+const ApiCafesIdServerRoute = ApiCafesIdServerRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiCafesServerRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
+  '/cafes/$id': typeof CafesIdRoute
   '/cafes': typeof CafesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
+  '/cafes/$id': typeof CafesIdRoute
   '/cafes': typeof CafesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/deferred': typeof DeferredRoute
+  '/cafes/$id': typeof CafesIdRoute
   '/cafes/': typeof CafesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/deferred' | '/cafes'
+  fullPaths: '/' | '/deferred' | '/cafes/$id' | '/cafes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/deferred' | '/cafes'
-  id: '__root__' | '/' | '/deferred' | '/cafes/'
+  to: '/' | '/deferred' | '/cafes/$id' | '/cafes'
+  id: '__root__' | '/' | '/deferred' | '/cafes/$id' | '/cafes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DeferredRoute: typeof DeferredRoute
+  CafesIdRoute: typeof CafesIdRoute
   CafesIndexRoute: typeof CafesIndexRoute
 }
 export interface FileServerRoutesByFullPath {
-  '/api/cafes': typeof ApiCafesServerRoute
+  '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRoutesByTo {
-  '/api/cafes': typeof ApiCafesServerRoute
+  '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
-  '/api/cafes': typeof ApiCafesServerRoute
+  '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/cafes'
+  fullPaths: '/api/cafes' | '/api/cafes/$id'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/cafes'
-  id: '__root__' | '/api/cafes'
+  to: '/api/cafes' | '/api/cafes/$id'
+  id: '__root__' | '/api/cafes' | '/api/cafes/$id'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
-  ApiCafesServerRoute: typeof ApiCafesServerRoute
+  ApiCafesServerRoute: typeof ApiCafesServerRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -113,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CafesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cafes/$id': {
+      id: '/cafes/$id'
+      path: '/cafes/$id'
+      fullPath: '/cafes/$id'
+      preLoaderRoute: typeof CafesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 declare module '@tanstack/react-start/server' {
@@ -124,19 +150,39 @@ declare module '@tanstack/react-start/server' {
       preLoaderRoute: typeof ApiCafesServerRouteImport
       parentRoute: typeof rootServerRouteImport
     }
+    '/api/cafes/$id': {
+      id: '/api/cafes/$id'
+      path: '/$id'
+      fullPath: '/api/cafes/$id'
+      preLoaderRoute: typeof ApiCafesIdServerRouteImport
+      parentRoute: typeof ApiCafesServerRoute
+    }
   }
 }
+
+interface ApiCafesServerRouteChildren {
+  ApiCafesIdServerRoute: typeof ApiCafesIdServerRoute
+}
+
+const ApiCafesServerRouteChildren: ApiCafesServerRouteChildren = {
+  ApiCafesIdServerRoute: ApiCafesIdServerRoute,
+}
+
+const ApiCafesServerRouteWithChildren = ApiCafesServerRoute._addFileChildren(
+  ApiCafesServerRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DeferredRoute: DeferredRoute,
+  CafesIdRoute: CafesIdRoute,
   CafesIndexRoute: CafesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiCafesServerRoute: ApiCafesServerRoute,
+  ApiCafesServerRoute: ApiCafesServerRouteWithChildren,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)

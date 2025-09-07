@@ -55,6 +55,12 @@ export const Route = createRootRouteWithContext<{
       { rel: "icon", href: "/favicon.ico" },
     ],
   }),
+  beforeLoad: () => {
+    const apiBase = import.meta.env.SSR
+      ? process.env.VITE_PUBLIC_ORIGIN ?? "http://localhost:3000"
+      : window.location.origin;
+    return { apiBase };
+  },
   errorComponent: (props) => {
     return (
       <RootDocument>
