@@ -4,8 +4,7 @@ import { CafeListItem } from "../../components/CafeListItem";
 import type { Cafe } from "~/server/db";
 import { getBaseUrl } from "~/utils/getBaseUrl";
 
-export const Route = createFileRoute("/tasks/task2-solution")({
-  // 💡 Legger til loader for å hente data
+export const Route = createFileRoute("/tasks/task4")({
   loader: async () => {
     const api = new URL("/api/cafes", getBaseUrl());
     const res = await fetch(api);
@@ -19,15 +18,20 @@ export const Route = createFileRoute("/tasks/task2-solution")({
 
 function RouteComponent() {
   /* 
+    👉 Bruk baseUrl fra Route context, så du slipper å definere getBaseUrl per fetch
+    - I __root.tsx har vi lagt til "apiBase" som gir deg base-url til API-et
+    - Bruk RouteContext til å hente ut denne verdien (istedenfor å bruke getBaseUrl)
+
     💭 
-    - Ta en titt på getBaseUrl. Hvorfor trengs det å ta hensyn til SSR?
+    - Hvilke andre bruk kommer du på for Route Context?
+
+    📖 https://tanstack.com/router/v1/docs/framework/react/guide/router-context#using-the-router-context
   */
-  // 💡 Tar i bruk loaderData
   const cafes = Route.useLoaderData();
 
   return (
     <div>
-      <Title>Oppgave 2: Hent kafeer ☕️</Title>
+      <Title>Oppgave 3: Route Context ☕️</Title>
       <ul>
         {cafes.map((cafe) => (
           <CafeListItem key={cafe.id} cafe={cafe}></CafeListItem>

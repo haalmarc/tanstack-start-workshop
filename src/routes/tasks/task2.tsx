@@ -11,6 +11,7 @@ function RouteComponent() {
     👉 Vis kafeer
     - Bruk en loader til å hente kafeer fra http://localhost:3000/api/cafes
     - Vis kafeene i en liste
+    - Bruk getBaseUrl for å finne riktig base-url
 
     💭 Er det noe forskjellig fra å bruke loaderData med TanStack Router versus TanStack Start?
 

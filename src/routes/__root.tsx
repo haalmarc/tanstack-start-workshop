@@ -56,6 +56,7 @@ export const Route = createRootRouteWithContext<{
     ],
   }),
   beforeLoad: () => {
+    // 💡 Benyttes i oppgave3
     const apiBase = import.meta.env.SSR
       ? process.env.VITE_PUBLIC_ORIGIN ?? "http://localhost:3000"
       : window.location.origin;
