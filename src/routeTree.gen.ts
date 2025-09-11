@@ -11,20 +11,18 @@
 import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as DeferredRouteImport } from './routes/deferred'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CafesIndexRouteImport } from './routes/cafes/index'
+import { Route as TasksTask2SolutionRouteImport } from './routes/tasks/task2-solution'
+import { Route as TasksTask2RouteImport } from './routes/tasks/task2'
+import { Route as TasksTask1SolutionRouteImport } from './routes/tasks/task1-solution'
+import { Route as TasksTask1RouteImport } from './routes/tasks/task1'
 import { Route as CafesIdRouteImport } from './routes/cafes/$id'
 import { ServerRoute as ApiCafesServerRouteImport } from './routes/api/cafes'
 import { ServerRoute as ApiCafesIdServerRouteImport } from './routes/api/cafes.$id'
 
 const rootServerRouteImport = createServerRootRoute()
 
-const DeferredRoute = DeferredRouteImport.update({
-  id: '/deferred',
-  path: '/deferred',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -33,6 +31,26 @@ const IndexRoute = IndexRouteImport.update({
 const CafesIndexRoute = CafesIndexRouteImport.update({
   id: '/cafes/',
   path: '/cafes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksTask2SolutionRoute = TasksTask2SolutionRouteImport.update({
+  id: '/tasks/task2-solution',
+  path: '/tasks/task2-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksTask2Route = TasksTask2RouteImport.update({
+  id: '/tasks/task2',
+  path: '/tasks/task2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksTask1SolutionRoute = TasksTask1SolutionRouteImport.update({
+  id: '/tasks/task1-solution',
+  path: '/tasks/task1-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksTask1Route = TasksTask1RouteImport.update({
+  id: '/tasks/task1',
+  path: '/tasks/task1',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CafesIdRoute = CafesIdRouteImport.update({
@@ -53,35 +71,69 @@ const ApiCafesIdServerRoute = ApiCafesIdServerRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/deferred': typeof DeferredRoute
   '/cafes/$id': typeof CafesIdRoute
+  '/tasks/task1': typeof TasksTask1Route
+  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
+  '/tasks/task2': typeof TasksTask2Route
+  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
   '/cafes': typeof CafesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/deferred': typeof DeferredRoute
   '/cafes/$id': typeof CafesIdRoute
+  '/tasks/task1': typeof TasksTask1Route
+  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
+  '/tasks/task2': typeof TasksTask2Route
+  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
   '/cafes': typeof CafesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/deferred': typeof DeferredRoute
   '/cafes/$id': typeof CafesIdRoute
+  '/tasks/task1': typeof TasksTask1Route
+  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
+  '/tasks/task2': typeof TasksTask2Route
+  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
   '/cafes/': typeof CafesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/deferred' | '/cafes/$id' | '/cafes'
+  fullPaths:
+    | '/'
+    | '/cafes/$id'
+    | '/tasks/task1'
+    | '/tasks/task1-solution'
+    | '/tasks/task2'
+    | '/tasks/task2-solution'
+    | '/cafes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/deferred' | '/cafes/$id' | '/cafes'
-  id: '__root__' | '/' | '/deferred' | '/cafes/$id' | '/cafes/'
+  to:
+    | '/'
+    | '/cafes/$id'
+    | '/tasks/task1'
+    | '/tasks/task1-solution'
+    | '/tasks/task2'
+    | '/tasks/task2-solution'
+    | '/cafes'
+  id:
+    | '__root__'
+    | '/'
+    | '/cafes/$id'
+    | '/tasks/task1'
+    | '/tasks/task1-solution'
+    | '/tasks/task2'
+    | '/tasks/task2-solution'
+    | '/cafes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DeferredRoute: typeof DeferredRoute
   CafesIdRoute: typeof CafesIdRoute
+  TasksTask1Route: typeof TasksTask1Route
+  TasksTask1SolutionRoute: typeof TasksTask1SolutionRoute
+  TasksTask2Route: typeof TasksTask2Route
+  TasksTask2SolutionRoute: typeof TasksTask2SolutionRoute
   CafesIndexRoute: typeof CafesIndexRoute
 }
 export interface FileServerRoutesByFullPath {
@@ -111,13 +163,6 @@ export interface RootServerRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/deferred': {
-      id: '/deferred'
-      path: '/deferred'
-      fullPath: '/deferred'
-      preLoaderRoute: typeof DeferredRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -130,6 +175,34 @@ declare module '@tanstack/react-router' {
       path: '/cafes'
       fullPath: '/cafes'
       preLoaderRoute: typeof CafesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks/task2-solution': {
+      id: '/tasks/task2-solution'
+      path: '/tasks/task2-solution'
+      fullPath: '/tasks/task2-solution'
+      preLoaderRoute: typeof TasksTask2SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks/task2': {
+      id: '/tasks/task2'
+      path: '/tasks/task2'
+      fullPath: '/tasks/task2'
+      preLoaderRoute: typeof TasksTask2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks/task1-solution': {
+      id: '/tasks/task1-solution'
+      path: '/tasks/task1-solution'
+      fullPath: '/tasks/task1-solution'
+      preLoaderRoute: typeof TasksTask1SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks/task1': {
+      id: '/tasks/task1'
+      path: '/tasks/task1'
+      fullPath: '/tasks/task1'
+      preLoaderRoute: typeof TasksTask1RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cafes/$id': {
@@ -174,8 +247,11 @@ const ApiCafesServerRouteWithChildren = ApiCafesServerRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DeferredRoute: DeferredRoute,
   CafesIdRoute: CafesIdRoute,
+  TasksTask1Route: TasksTask1Route,
+  TasksTask1SolutionRoute: TasksTask1SolutionRoute,
+  TasksTask2Route: TasksTask2Route,
+  TasksTask2SolutionRoute: TasksTask2SolutionRoute,
   CafesIndexRoute: CafesIndexRoute,
 }
 export const routeTree = rootRouteImport

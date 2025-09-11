@@ -73,6 +73,8 @@ export const Route = createRootRouteWithContext<{
 });
 ```
 
+</details>
+
 - Legg til styling i navbaren, så aktiv lenke er i bold.
 
 <details>

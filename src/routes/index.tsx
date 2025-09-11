@@ -9,12 +9,7 @@ function Home() {
       <h3>Welcome Home!!!</h3>
       <ul>
         <li>
-          <Link
-            // @ts-expect-error
-            to="/this-route-does-not-exist"
-          >
-            This Route Does Not Exist
-          </Link>
+          <Link to="/tasks/task1">Task1</Link>
         </li>
         <li>
           <Link to="/cafes">Cafe</Link>

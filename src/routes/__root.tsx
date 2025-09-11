@@ -72,30 +72,56 @@ export const Route = createRootRouteWithContext<{
   component: RootComponent,
 });
 
+function NavItem({ children }: { children: React.ReactNode }) {
+  return <li className="flex flex-col gap-1 mr-4">{children}</li>;
+}
+
 function RootComponent() {
   return (
     <RootDocument>
-      <nav>
-        <ul>
-          <li>
+      <nav className="p-2">
+        <ul className="flex gap-2 text-lg">
+          <NavItem>
             <Link
-              to="/cafes"
+              to="/tasks/task1"
               activeProps={{
                 className: "font-bold",
               }}
             >
-              Cafe
+              Task1
             </Link>
             <Link
-              // @ts-expect-error
-              to="/this-route-does-not-exist"
+              to="/tasks/task1-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
             >
-              This Route Does Not Exist
+              Løsning1
             </Link>
-          </li>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks/task2"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Task2
+            </Link>
+            <Link
+              to="/tasks/task2-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning2
+            </Link>
+          </NavItem>
         </ul>
       </nav>
-      <Outlet />
+      <div className="p-2">
+        <Outlet />
+      </div>
     </RootDocument>
   );
 }
