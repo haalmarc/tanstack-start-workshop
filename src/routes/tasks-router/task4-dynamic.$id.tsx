@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/tasks/task4-dynamic/$id")({
+export const Route = createFileRoute("/tasks-router/task4-dynamic/$id")({
   component: RouteComponent,
 });
 

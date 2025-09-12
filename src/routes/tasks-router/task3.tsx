@@ -4,7 +4,7 @@ import { CafeListItem } from "../../components/CafeListItem";
 import type { Cafe } from "~/server/db";
 import { getBaseUrl } from "~/utils/getBaseUrl";
 
-export const Route = createFileRoute("/tasks/task3")({
+export const Route = createFileRoute("/tasks-router/task3")({
   loader: async () => {
     const api = new URL("/api/cafes", getBaseUrl());
     const res = await fetch(api);

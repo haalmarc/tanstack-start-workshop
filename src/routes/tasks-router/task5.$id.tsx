@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CafeListItem } from "~/components/CafeListItem";
 
-export const Route = createFileRoute("/tasks/task5/$id")({
+export const Route = createFileRoute("/tasks-router/task5/$id")({
   component: RouteComponent,
 });
 

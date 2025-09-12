@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Title } from "~/components/Title";
 import { CafeListItem } from "../../components/CafeListItem";
 
-export const Route = createFileRoute("/tasks/task2")({
+export const Route = createFileRoute("/tasks-router/task2")({
   component: RouteComponent,
 });
 

@@ -4,11 +4,8 @@ import type { Cafe } from "~/server/db";
 import { getBaseUrl } from "~/utils/getBaseUrl";
 import { CafeListItemWithLink } from "~/components/CafeListItemWithLink";
 
-export const Route = createFileRoute("/tasks/task6")({
+export const Route = createFileRoute("/tasks-router/task4-solution")({
   loader: async () => {
-    // 2 sekunder delay for å simulere lasting
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
     const api = new URL("/api/cafes", getBaseUrl());
     const res = await fetch(api);
     if (!res.ok) {
@@ -19,28 +16,19 @@ export const Route = createFileRoute("/tasks/task6")({
   component: RouteComponent,
 });
 
-/* 
-  👉 Legg til laste-tilstand 
-  - Hint: etter du har lagt til lastetilstand, kan du teste lasting ved å bruke en inkognito-fane, 
-    og navigere til denne ruten fra en annen rute.
-
-  💭 
-  - Hva innebærer defaultPreload: "intent", og hvordan påvirker det lastetilstand?
-  - Hvorfor trenger du å bruke en inkognito-fane? Hvordan fungerer cachen i TanStack Start?
-
-  📖 https://frontendmasters.com/blog/tanstack-router-data-loading-1/#loader-in-a-page
-*/
-
 function RouteComponent() {
   const cafes = Route.useLoaderData();
 
   return (
     <div>
-      <Title>Oppgave 6: Lasting ⚙️</Title>
+      <Title>Oppgave 4: Dynamisk rute 🤖</Title>
       <ul>
         {cafes.map((cafe) => (
           <CafeListItemWithLink key={cafe.id} cafe={cafe}>
-            <Link to="/tasks/task5-solution/$id" params={{ id: cafe.id }}>
+            {
+              // 💡 Legger til dynamisk variabel i "to" og sender med params
+            }
+            <Link to="/tasks-router/task4-dynamic/$id" params={{ id: cafe.id }}>
               Besøk kafeen
             </Link>
           </CafeListItemWithLink>

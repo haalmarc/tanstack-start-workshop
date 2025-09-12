@@ -9,7 +9,7 @@ import type { Cafe } from "~/server/db";
 import { getBaseUrl } from "~/utils/getBaseUrl";
 import { CafeListItemWithLink } from "~/components/CafeListItemWithLink";
 
-export const Route = createFileRoute("/tasks/task6-solution")({
+export const Route = createFileRoute("/tasks-router/task6-solution")({
   loader: async () => {
     // 2 sekunder delay for å simulere lasting
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -42,7 +42,10 @@ function RouteComponent() {
       <ul>
         {cafes.map((cafe) => (
           <CafeListItemWithLink key={cafe.id} cafe={cafe}>
-            <Link to="/tasks/task5-solution/$id" params={{ id: cafe.id }}>
+            <Link
+              to="/tasks-router/task5-solution/$id"
+              params={{ id: cafe.id }}
+            >
               Besøk kafeen
             </Link>
           </CafeListItemWithLink>

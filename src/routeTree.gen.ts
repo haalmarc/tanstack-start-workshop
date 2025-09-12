@@ -13,20 +13,22 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CafesIndexRouteImport } from './routes/cafes/index'
-import { Route as TasksTask6SolutionRouteImport } from './routes/tasks/task6-solution'
-import { Route as TasksTask6RouteImport } from './routes/tasks/task6'
-import { Route as TasksTask4SolutionRouteImport } from './routes/tasks/task4-solution'
-import { Route as TasksTask4RouteImport } from './routes/tasks/task4'
-import { Route as TasksTask3SolutionRouteImport } from './routes/tasks/task3-solution'
-import { Route as TasksTask3RouteImport } from './routes/tasks/task3'
-import { Route as TasksTask2SolutionRouteImport } from './routes/tasks/task2-solution'
-import { Route as TasksTask2RouteImport } from './routes/tasks/task2'
-import { Route as TasksTask1SolutionRouteImport } from './routes/tasks/task1-solution'
-import { Route as TasksTask1RouteImport } from './routes/tasks/task1'
+import { Route as TasksRouterTask6SolutionRouteImport } from './routes/tasks-router/task6-solution'
+import { Route as TasksRouterTask6RouteImport } from './routes/tasks-router/task6'
+import { Route as TasksRouterTask4SolutionRouteImport } from './routes/tasks-router/task4-solution'
+import { Route as TasksRouterTask4RouteImport } from './routes/tasks-router/task4'
+import { Route as TasksRouterTask3SolutionRouteImport } from './routes/tasks-router/task3-solution'
+import { Route as TasksRouterTask3RouteImport } from './routes/tasks-router/task3'
+import { Route as TasksRouterTask2SolutionRouteImport } from './routes/tasks-router/task2-solution'
+import { Route as TasksRouterTask2RouteImport } from './routes/tasks-router/task2'
+import { Route as TasksRouterTask1SolutionRouteImport } from './routes/tasks-router/task1-solution'
+import { Route as TasksRouterTask1RouteImport } from './routes/tasks-router/task1'
+import { Route as TasksQueryTask1SolutionRouteImport } from './routes/tasks-query/task1-solution'
+import { Route as TasksQueryTask1RouteImport } from './routes/tasks-query/task1'
 import { Route as CafesIdRouteImport } from './routes/cafes/$id'
-import { Route as TasksTask5IdRouteImport } from './routes/tasks/task5.$id'
-import { Route as TasksTask5SolutionIdRouteImport } from './routes/tasks/task5-solution.$id'
-import { Route as TasksTask4DynamicIdRouteImport } from './routes/tasks/task4-dynamic.$id'
+import { Route as TasksRouterTask5IdRouteImport } from './routes/tasks-router/task5.$id'
+import { Route as TasksRouterTask5SolutionIdRouteImport } from './routes/tasks-router/task5-solution.$id'
+import { Route as TasksRouterTask4DynamicIdRouteImport } from './routes/tasks-router/task4-dynamic.$id'
 import { ServerRoute as ApiCafesServerRouteImport } from './routes/api/cafes'
 import { ServerRoute as ApiCafesIdServerRouteImport } from './routes/api/cafes.$id'
 
@@ -42,54 +44,69 @@ const CafesIndexRoute = CafesIndexRouteImport.update({
   path: '/cafes/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask6SolutionRoute = TasksTask6SolutionRouteImport.update({
-  id: '/tasks/task6-solution',
-  path: '/tasks/task6-solution',
+const TasksRouterTask6SolutionRoute =
+  TasksRouterTask6SolutionRouteImport.update({
+    id: '/tasks-router/task6-solution',
+    path: '/tasks-router/task6-solution',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask6Route = TasksRouterTask6RouteImport.update({
+  id: '/tasks-router/task6',
+  path: '/tasks-router/task6',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask6Route = TasksTask6RouteImport.update({
-  id: '/tasks/task6',
-  path: '/tasks/task6',
+const TasksRouterTask4SolutionRoute =
+  TasksRouterTask4SolutionRouteImport.update({
+    id: '/tasks-router/task4-solution',
+    path: '/tasks-router/task4-solution',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask4Route = TasksRouterTask4RouteImport.update({
+  id: '/tasks-router/task4',
+  path: '/tasks-router/task4',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask4SolutionRoute = TasksTask4SolutionRouteImport.update({
-  id: '/tasks/task4-solution',
-  path: '/tasks/task4-solution',
+const TasksRouterTask3SolutionRoute =
+  TasksRouterTask3SolutionRouteImport.update({
+    id: '/tasks-router/task3-solution',
+    path: '/tasks-router/task3-solution',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask3Route = TasksRouterTask3RouteImport.update({
+  id: '/tasks-router/task3',
+  path: '/tasks-router/task3',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask4Route = TasksTask4RouteImport.update({
-  id: '/tasks/task4',
-  path: '/tasks/task4',
+const TasksRouterTask2SolutionRoute =
+  TasksRouterTask2SolutionRouteImport.update({
+    id: '/tasks-router/task2-solution',
+    path: '/tasks-router/task2-solution',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask2Route = TasksRouterTask2RouteImport.update({
+  id: '/tasks-router/task2',
+  path: '/tasks-router/task2',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask3SolutionRoute = TasksTask3SolutionRouteImport.update({
-  id: '/tasks/task3-solution',
-  path: '/tasks/task3-solution',
+const TasksRouterTask1SolutionRoute =
+  TasksRouterTask1SolutionRouteImport.update({
+    id: '/tasks-router/task1-solution',
+    path: '/tasks-router/task1-solution',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask1Route = TasksRouterTask1RouteImport.update({
+  id: '/tasks-router/task1',
+  path: '/tasks-router/task1',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask3Route = TasksTask3RouteImport.update({
-  id: '/tasks/task3',
-  path: '/tasks/task3',
+const TasksQueryTask1SolutionRoute = TasksQueryTask1SolutionRouteImport.update({
+  id: '/tasks-query/task1-solution',
+  path: '/tasks-query/task1-solution',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask2SolutionRoute = TasksTask2SolutionRouteImport.update({
-  id: '/tasks/task2-solution',
-  path: '/tasks/task2-solution',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TasksTask2Route = TasksTask2RouteImport.update({
-  id: '/tasks/task2',
-  path: '/tasks/task2',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TasksTask1SolutionRoute = TasksTask1SolutionRouteImport.update({
-  id: '/tasks/task1-solution',
-  path: '/tasks/task1-solution',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TasksTask1Route = TasksTask1RouteImport.update({
-  id: '/tasks/task1',
-  path: '/tasks/task1',
+const TasksQueryTask1Route = TasksQueryTask1RouteImport.update({
+  id: '/tasks-query/task1',
+  path: '/tasks-query/task1',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CafesIdRoute = CafesIdRouteImport.update({
@@ -97,21 +114,23 @@ const CafesIdRoute = CafesIdRouteImport.update({
   path: '/cafes/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask5IdRoute = TasksTask5IdRouteImport.update({
-  id: '/tasks/task5/$id',
-  path: '/tasks/task5/$id',
+const TasksRouterTask5IdRoute = TasksRouterTask5IdRouteImport.update({
+  id: '/tasks-router/task5/$id',
+  path: '/tasks-router/task5/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TasksTask5SolutionIdRoute = TasksTask5SolutionIdRouteImport.update({
-  id: '/tasks/task5-solution/$id',
-  path: '/tasks/task5-solution/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TasksTask4DynamicIdRoute = TasksTask4DynamicIdRouteImport.update({
-  id: '/tasks/task4-dynamic/$id',
-  path: '/tasks/task4-dynamic/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const TasksRouterTask5SolutionIdRoute =
+  TasksRouterTask5SolutionIdRouteImport.update({
+    id: '/tasks-router/task5-solution/$id',
+    path: '/tasks-router/task5-solution/$id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TasksRouterTask4DynamicIdRoute =
+  TasksRouterTask4DynamicIdRouteImport.update({
+    id: '/tasks-router/task4-dynamic/$id',
+    path: '/tasks-router/task4-dynamic/$id',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiCafesServerRoute = ApiCafesServerRouteImport.update({
   id: '/api/cafes',
   path: '/api/cafes',
@@ -126,132 +145,146 @@ const ApiCafesIdServerRoute = ApiCafesIdServerRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cafes/$id': typeof CafesIdRoute
-  '/tasks/task1': typeof TasksTask1Route
-  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
-  '/tasks/task2': typeof TasksTask2Route
-  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
-  '/tasks/task3': typeof TasksTask3Route
-  '/tasks/task3-solution': typeof TasksTask3SolutionRoute
-  '/tasks/task4': typeof TasksTask4Route
-  '/tasks/task4-solution': typeof TasksTask4SolutionRoute
-  '/tasks/task6': typeof TasksTask6Route
-  '/tasks/task6-solution': typeof TasksTask6SolutionRoute
+  '/tasks-query/task1': typeof TasksQueryTask1Route
+  '/tasks-query/task1-solution': typeof TasksQueryTask1SolutionRoute
+  '/tasks-router/task1': typeof TasksRouterTask1Route
+  '/tasks-router/task1-solution': typeof TasksRouterTask1SolutionRoute
+  '/tasks-router/task2': typeof TasksRouterTask2Route
+  '/tasks-router/task2-solution': typeof TasksRouterTask2SolutionRoute
+  '/tasks-router/task3': typeof TasksRouterTask3Route
+  '/tasks-router/task3-solution': typeof TasksRouterTask3SolutionRoute
+  '/tasks-router/task4': typeof TasksRouterTask4Route
+  '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
+  '/tasks-router/task6': typeof TasksRouterTask6Route
+  '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
   '/cafes': typeof CafesIndexRoute
-  '/tasks/task4-dynamic/$id': typeof TasksTask4DynamicIdRoute
-  '/tasks/task5-solution/$id': typeof TasksTask5SolutionIdRoute
-  '/tasks/task5/$id': typeof TasksTask5IdRoute
+  '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
+  '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
+  '/tasks-router/task5/$id': typeof TasksRouterTask5IdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cafes/$id': typeof CafesIdRoute
-  '/tasks/task1': typeof TasksTask1Route
-  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
-  '/tasks/task2': typeof TasksTask2Route
-  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
-  '/tasks/task3': typeof TasksTask3Route
-  '/tasks/task3-solution': typeof TasksTask3SolutionRoute
-  '/tasks/task4': typeof TasksTask4Route
-  '/tasks/task4-solution': typeof TasksTask4SolutionRoute
-  '/tasks/task6': typeof TasksTask6Route
-  '/tasks/task6-solution': typeof TasksTask6SolutionRoute
+  '/tasks-query/task1': typeof TasksQueryTask1Route
+  '/tasks-query/task1-solution': typeof TasksQueryTask1SolutionRoute
+  '/tasks-router/task1': typeof TasksRouterTask1Route
+  '/tasks-router/task1-solution': typeof TasksRouterTask1SolutionRoute
+  '/tasks-router/task2': typeof TasksRouterTask2Route
+  '/tasks-router/task2-solution': typeof TasksRouterTask2SolutionRoute
+  '/tasks-router/task3': typeof TasksRouterTask3Route
+  '/tasks-router/task3-solution': typeof TasksRouterTask3SolutionRoute
+  '/tasks-router/task4': typeof TasksRouterTask4Route
+  '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
+  '/tasks-router/task6': typeof TasksRouterTask6Route
+  '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
   '/cafes': typeof CafesIndexRoute
-  '/tasks/task4-dynamic/$id': typeof TasksTask4DynamicIdRoute
-  '/tasks/task5-solution/$id': typeof TasksTask5SolutionIdRoute
-  '/tasks/task5/$id': typeof TasksTask5IdRoute
+  '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
+  '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
+  '/tasks-router/task5/$id': typeof TasksRouterTask5IdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cafes/$id': typeof CafesIdRoute
-  '/tasks/task1': typeof TasksTask1Route
-  '/tasks/task1-solution': typeof TasksTask1SolutionRoute
-  '/tasks/task2': typeof TasksTask2Route
-  '/tasks/task2-solution': typeof TasksTask2SolutionRoute
-  '/tasks/task3': typeof TasksTask3Route
-  '/tasks/task3-solution': typeof TasksTask3SolutionRoute
-  '/tasks/task4': typeof TasksTask4Route
-  '/tasks/task4-solution': typeof TasksTask4SolutionRoute
-  '/tasks/task6': typeof TasksTask6Route
-  '/tasks/task6-solution': typeof TasksTask6SolutionRoute
+  '/tasks-query/task1': typeof TasksQueryTask1Route
+  '/tasks-query/task1-solution': typeof TasksQueryTask1SolutionRoute
+  '/tasks-router/task1': typeof TasksRouterTask1Route
+  '/tasks-router/task1-solution': typeof TasksRouterTask1SolutionRoute
+  '/tasks-router/task2': typeof TasksRouterTask2Route
+  '/tasks-router/task2-solution': typeof TasksRouterTask2SolutionRoute
+  '/tasks-router/task3': typeof TasksRouterTask3Route
+  '/tasks-router/task3-solution': typeof TasksRouterTask3SolutionRoute
+  '/tasks-router/task4': typeof TasksRouterTask4Route
+  '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
+  '/tasks-router/task6': typeof TasksRouterTask6Route
+  '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
   '/cafes/': typeof CafesIndexRoute
-  '/tasks/task4-dynamic/$id': typeof TasksTask4DynamicIdRoute
-  '/tasks/task5-solution/$id': typeof TasksTask5SolutionIdRoute
-  '/tasks/task5/$id': typeof TasksTask5IdRoute
+  '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
+  '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
+  '/tasks-router/task5/$id': typeof TasksRouterTask5IdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/cafes/$id'
-    | '/tasks/task1'
-    | '/tasks/task1-solution'
-    | '/tasks/task2'
-    | '/tasks/task2-solution'
-    | '/tasks/task3'
-    | '/tasks/task3-solution'
-    | '/tasks/task4'
-    | '/tasks/task4-solution'
-    | '/tasks/task6'
-    | '/tasks/task6-solution'
+    | '/tasks-query/task1'
+    | '/tasks-query/task1-solution'
+    | '/tasks-router/task1'
+    | '/tasks-router/task1-solution'
+    | '/tasks-router/task2'
+    | '/tasks-router/task2-solution'
+    | '/tasks-router/task3'
+    | '/tasks-router/task3-solution'
+    | '/tasks-router/task4'
+    | '/tasks-router/task4-solution'
+    | '/tasks-router/task6'
+    | '/tasks-router/task6-solution'
     | '/cafes'
-    | '/tasks/task4-dynamic/$id'
-    | '/tasks/task5-solution/$id'
-    | '/tasks/task5/$id'
+    | '/tasks-router/task4-dynamic/$id'
+    | '/tasks-router/task5-solution/$id'
+    | '/tasks-router/task5/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/cafes/$id'
-    | '/tasks/task1'
-    | '/tasks/task1-solution'
-    | '/tasks/task2'
-    | '/tasks/task2-solution'
-    | '/tasks/task3'
-    | '/tasks/task3-solution'
-    | '/tasks/task4'
-    | '/tasks/task4-solution'
-    | '/tasks/task6'
-    | '/tasks/task6-solution'
+    | '/tasks-query/task1'
+    | '/tasks-query/task1-solution'
+    | '/tasks-router/task1'
+    | '/tasks-router/task1-solution'
+    | '/tasks-router/task2'
+    | '/tasks-router/task2-solution'
+    | '/tasks-router/task3'
+    | '/tasks-router/task3-solution'
+    | '/tasks-router/task4'
+    | '/tasks-router/task4-solution'
+    | '/tasks-router/task6'
+    | '/tasks-router/task6-solution'
     | '/cafes'
-    | '/tasks/task4-dynamic/$id'
-    | '/tasks/task5-solution/$id'
-    | '/tasks/task5/$id'
+    | '/tasks-router/task4-dynamic/$id'
+    | '/tasks-router/task5-solution/$id'
+    | '/tasks-router/task5/$id'
   id:
     | '__root__'
     | '/'
     | '/cafes/$id'
-    | '/tasks/task1'
-    | '/tasks/task1-solution'
-    | '/tasks/task2'
-    | '/tasks/task2-solution'
-    | '/tasks/task3'
-    | '/tasks/task3-solution'
-    | '/tasks/task4'
-    | '/tasks/task4-solution'
-    | '/tasks/task6'
-    | '/tasks/task6-solution'
+    | '/tasks-query/task1'
+    | '/tasks-query/task1-solution'
+    | '/tasks-router/task1'
+    | '/tasks-router/task1-solution'
+    | '/tasks-router/task2'
+    | '/tasks-router/task2-solution'
+    | '/tasks-router/task3'
+    | '/tasks-router/task3-solution'
+    | '/tasks-router/task4'
+    | '/tasks-router/task4-solution'
+    | '/tasks-router/task6'
+    | '/tasks-router/task6-solution'
     | '/cafes/'
-    | '/tasks/task4-dynamic/$id'
-    | '/tasks/task5-solution/$id'
-    | '/tasks/task5/$id'
+    | '/tasks-router/task4-dynamic/$id'
+    | '/tasks-router/task5-solution/$id'
+    | '/tasks-router/task5/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CafesIdRoute: typeof CafesIdRoute
-  TasksTask1Route: typeof TasksTask1Route
-  TasksTask1SolutionRoute: typeof TasksTask1SolutionRoute
-  TasksTask2Route: typeof TasksTask2Route
-  TasksTask2SolutionRoute: typeof TasksTask2SolutionRoute
-  TasksTask3Route: typeof TasksTask3Route
-  TasksTask3SolutionRoute: typeof TasksTask3SolutionRoute
-  TasksTask4Route: typeof TasksTask4Route
-  TasksTask4SolutionRoute: typeof TasksTask4SolutionRoute
-  TasksTask6Route: typeof TasksTask6Route
-  TasksTask6SolutionRoute: typeof TasksTask6SolutionRoute
+  TasksQueryTask1Route: typeof TasksQueryTask1Route
+  TasksQueryTask1SolutionRoute: typeof TasksQueryTask1SolutionRoute
+  TasksRouterTask1Route: typeof TasksRouterTask1Route
+  TasksRouterTask1SolutionRoute: typeof TasksRouterTask1SolutionRoute
+  TasksRouterTask2Route: typeof TasksRouterTask2Route
+  TasksRouterTask2SolutionRoute: typeof TasksRouterTask2SolutionRoute
+  TasksRouterTask3Route: typeof TasksRouterTask3Route
+  TasksRouterTask3SolutionRoute: typeof TasksRouterTask3SolutionRoute
+  TasksRouterTask4Route: typeof TasksRouterTask4Route
+  TasksRouterTask4SolutionRoute: typeof TasksRouterTask4SolutionRoute
+  TasksRouterTask6Route: typeof TasksRouterTask6Route
+  TasksRouterTask6SolutionRoute: typeof TasksRouterTask6SolutionRoute
   CafesIndexRoute: typeof CafesIndexRoute
-  TasksTask4DynamicIdRoute: typeof TasksTask4DynamicIdRoute
-  TasksTask5SolutionIdRoute: typeof TasksTask5SolutionIdRoute
-  TasksTask5IdRoute: typeof TasksTask5IdRoute
+  TasksRouterTask4DynamicIdRoute: typeof TasksRouterTask4DynamicIdRoute
+  TasksRouterTask5SolutionIdRoute: typeof TasksRouterTask5SolutionIdRoute
+  TasksRouterTask5IdRoute: typeof TasksRouterTask5IdRoute
 }
 export interface FileServerRoutesByFullPath {
   '/api/cafes': typeof ApiCafesServerRouteWithChildren
@@ -294,74 +327,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CafesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task6-solution': {
-      id: '/tasks/task6-solution'
-      path: '/tasks/task6-solution'
-      fullPath: '/tasks/task6-solution'
-      preLoaderRoute: typeof TasksTask6SolutionRouteImport
+    '/tasks-router/task6-solution': {
+      id: '/tasks-router/task6-solution'
+      path: '/tasks-router/task6-solution'
+      fullPath: '/tasks-router/task6-solution'
+      preLoaderRoute: typeof TasksRouterTask6SolutionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task6': {
-      id: '/tasks/task6'
-      path: '/tasks/task6'
-      fullPath: '/tasks/task6'
-      preLoaderRoute: typeof TasksTask6RouteImport
+    '/tasks-router/task6': {
+      id: '/tasks-router/task6'
+      path: '/tasks-router/task6'
+      fullPath: '/tasks-router/task6'
+      preLoaderRoute: typeof TasksRouterTask6RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task4-solution': {
-      id: '/tasks/task4-solution'
-      path: '/tasks/task4-solution'
-      fullPath: '/tasks/task4-solution'
-      preLoaderRoute: typeof TasksTask4SolutionRouteImport
+    '/tasks-router/task4-solution': {
+      id: '/tasks-router/task4-solution'
+      path: '/tasks-router/task4-solution'
+      fullPath: '/tasks-router/task4-solution'
+      preLoaderRoute: typeof TasksRouterTask4SolutionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task4': {
-      id: '/tasks/task4'
-      path: '/tasks/task4'
-      fullPath: '/tasks/task4'
-      preLoaderRoute: typeof TasksTask4RouteImport
+    '/tasks-router/task4': {
+      id: '/tasks-router/task4'
+      path: '/tasks-router/task4'
+      fullPath: '/tasks-router/task4'
+      preLoaderRoute: typeof TasksRouterTask4RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task3-solution': {
-      id: '/tasks/task3-solution'
-      path: '/tasks/task3-solution'
-      fullPath: '/tasks/task3-solution'
-      preLoaderRoute: typeof TasksTask3SolutionRouteImport
+    '/tasks-router/task3-solution': {
+      id: '/tasks-router/task3-solution'
+      path: '/tasks-router/task3-solution'
+      fullPath: '/tasks-router/task3-solution'
+      preLoaderRoute: typeof TasksRouterTask3SolutionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task3': {
-      id: '/tasks/task3'
-      path: '/tasks/task3'
-      fullPath: '/tasks/task3'
-      preLoaderRoute: typeof TasksTask3RouteImport
+    '/tasks-router/task3': {
+      id: '/tasks-router/task3'
+      path: '/tasks-router/task3'
+      fullPath: '/tasks-router/task3'
+      preLoaderRoute: typeof TasksRouterTask3RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task2-solution': {
-      id: '/tasks/task2-solution'
-      path: '/tasks/task2-solution'
-      fullPath: '/tasks/task2-solution'
-      preLoaderRoute: typeof TasksTask2SolutionRouteImport
+    '/tasks-router/task2-solution': {
+      id: '/tasks-router/task2-solution'
+      path: '/tasks-router/task2-solution'
+      fullPath: '/tasks-router/task2-solution'
+      preLoaderRoute: typeof TasksRouterTask2SolutionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task2': {
-      id: '/tasks/task2'
-      path: '/tasks/task2'
-      fullPath: '/tasks/task2'
-      preLoaderRoute: typeof TasksTask2RouteImport
+    '/tasks-router/task2': {
+      id: '/tasks-router/task2'
+      path: '/tasks-router/task2'
+      fullPath: '/tasks-router/task2'
+      preLoaderRoute: typeof TasksRouterTask2RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task1-solution': {
-      id: '/tasks/task1-solution'
-      path: '/tasks/task1-solution'
-      fullPath: '/tasks/task1-solution'
-      preLoaderRoute: typeof TasksTask1SolutionRouteImport
+    '/tasks-router/task1-solution': {
+      id: '/tasks-router/task1-solution'
+      path: '/tasks-router/task1-solution'
+      fullPath: '/tasks-router/task1-solution'
+      preLoaderRoute: typeof TasksRouterTask1SolutionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task1': {
-      id: '/tasks/task1'
-      path: '/tasks/task1'
-      fullPath: '/tasks/task1'
-      preLoaderRoute: typeof TasksTask1RouteImport
+    '/tasks-router/task1': {
+      id: '/tasks-router/task1'
+      path: '/tasks-router/task1'
+      fullPath: '/tasks-router/task1'
+      preLoaderRoute: typeof TasksRouterTask1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-query/task1-solution': {
+      id: '/tasks-query/task1-solution'
+      path: '/tasks-query/task1-solution'
+      fullPath: '/tasks-query/task1-solution'
+      preLoaderRoute: typeof TasksQueryTask1SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-query/task1': {
+      id: '/tasks-query/task1'
+      path: '/tasks-query/task1'
+      fullPath: '/tasks-query/task1'
+      preLoaderRoute: typeof TasksQueryTask1RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cafes/$id': {
@@ -371,25 +418,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CafesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task5/$id': {
-      id: '/tasks/task5/$id'
-      path: '/tasks/task5/$id'
-      fullPath: '/tasks/task5/$id'
-      preLoaderRoute: typeof TasksTask5IdRouteImport
+    '/tasks-router/task5/$id': {
+      id: '/tasks-router/task5/$id'
+      path: '/tasks-router/task5/$id'
+      fullPath: '/tasks-router/task5/$id'
+      preLoaderRoute: typeof TasksRouterTask5IdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task5-solution/$id': {
-      id: '/tasks/task5-solution/$id'
-      path: '/tasks/task5-solution/$id'
-      fullPath: '/tasks/task5-solution/$id'
-      preLoaderRoute: typeof TasksTask5SolutionIdRouteImport
+    '/tasks-router/task5-solution/$id': {
+      id: '/tasks-router/task5-solution/$id'
+      path: '/tasks-router/task5-solution/$id'
+      fullPath: '/tasks-router/task5-solution/$id'
+      preLoaderRoute: typeof TasksRouterTask5SolutionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tasks/task4-dynamic/$id': {
-      id: '/tasks/task4-dynamic/$id'
-      path: '/tasks/task4-dynamic/$id'
-      fullPath: '/tasks/task4-dynamic/$id'
-      preLoaderRoute: typeof TasksTask4DynamicIdRouteImport
+    '/tasks-router/task4-dynamic/$id': {
+      id: '/tasks-router/task4-dynamic/$id'
+      path: '/tasks-router/task4-dynamic/$id'
+      fullPath: '/tasks-router/task4-dynamic/$id'
+      preLoaderRoute: typeof TasksRouterTask4DynamicIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -428,20 +475,22 @@ const ApiCafesServerRouteWithChildren = ApiCafesServerRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CafesIdRoute: CafesIdRoute,
-  TasksTask1Route: TasksTask1Route,
-  TasksTask1SolutionRoute: TasksTask1SolutionRoute,
-  TasksTask2Route: TasksTask2Route,
-  TasksTask2SolutionRoute: TasksTask2SolutionRoute,
-  TasksTask3Route: TasksTask3Route,
-  TasksTask3SolutionRoute: TasksTask3SolutionRoute,
-  TasksTask4Route: TasksTask4Route,
-  TasksTask4SolutionRoute: TasksTask4SolutionRoute,
-  TasksTask6Route: TasksTask6Route,
-  TasksTask6SolutionRoute: TasksTask6SolutionRoute,
+  TasksQueryTask1Route: TasksQueryTask1Route,
+  TasksQueryTask1SolutionRoute: TasksQueryTask1SolutionRoute,
+  TasksRouterTask1Route: TasksRouterTask1Route,
+  TasksRouterTask1SolutionRoute: TasksRouterTask1SolutionRoute,
+  TasksRouterTask2Route: TasksRouterTask2Route,
+  TasksRouterTask2SolutionRoute: TasksRouterTask2SolutionRoute,
+  TasksRouterTask3Route: TasksRouterTask3Route,
+  TasksRouterTask3SolutionRoute: TasksRouterTask3SolutionRoute,
+  TasksRouterTask4Route: TasksRouterTask4Route,
+  TasksRouterTask4SolutionRoute: TasksRouterTask4SolutionRoute,
+  TasksRouterTask6Route: TasksRouterTask6Route,
+  TasksRouterTask6SolutionRoute: TasksRouterTask6SolutionRoute,
   CafesIndexRoute: CafesIndexRoute,
-  TasksTask4DynamicIdRoute: TasksTask4DynamicIdRoute,
-  TasksTask5SolutionIdRoute: TasksTask5SolutionIdRoute,
-  TasksTask5IdRoute: TasksTask5IdRoute,
+  TasksRouterTask4DynamicIdRoute: TasksRouterTask4DynamicIdRoute,
+  TasksRouterTask5SolutionIdRoute: TasksRouterTask5SolutionIdRoute,
+  TasksRouterTask5IdRoute: TasksRouterTask5IdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

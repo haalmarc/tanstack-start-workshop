@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Title } from "~/components/Title";
 
-export const Route = createFileRoute("/tasks/task1-solution")({
+export const Route = createFileRoute("/tasks-router/task1-solution")({
   component: RouteComponent,
 });
 
@@ -19,7 +19,7 @@ function RouteComponent() {
       {
         // 💡 Tar i bruk Link
       }
-      <Link to="/tasks/task2">Oppgave2</Link>!
+      <Link to="/tasks-router/task2">Oppgave2</Link>!
     </div>
   );
 }
