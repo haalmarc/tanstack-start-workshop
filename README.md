@@ -9,6 +9,20 @@ Server is seeded with api/cafes. Resets on stopping server.
 
 ## Oppgaver
 
+TODO oppgaver
+
+- 4 gå til enkelt-kafe
+- 5 legg til en kafe. mutering og invalidering med react router
+
+- så typ opg 6 eller noe
+- bruke router sammen med react query
+
+- så uti der bruke tanstack start. Hva er forskjellen her og på router
+- bruke de samme tinga, men med server function
+- ssr, cache. Noe annet?
+
+---
+
 ### Oppgave 0: Hvorfor TanStack Start?
 
 - Hva er forskjellen på TanStack Start og TanStack Router?

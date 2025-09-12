@@ -16,17 +16,18 @@ export const Route = createFileRoute("/tasks/task3")({
   component: RouteComponent,
 });
 
+/* 
+  👉 Bruk baseUrl fra Route context, så du slipper å definere getBaseUrl per fetch
+  - I __root.tsx har vi lagt til "apiBase" som gir deg base-url til API-et
+  - Bruk RouteContext til å hente ut denne verdien (istedenfor å bruke getBaseUrl)
+
+  💭 
+  - Hvilke andre bruk kommer du på for Route Context?
+
+  📖 https://tanstack.com/router/v1/docs/framework/react/guide/router-context#using-the-router-context
+*/
+
 function RouteComponent() {
-  /* 
-    👉 Bruk baseUrl fra Route context, så du slipper å definere getBaseUrl per fetch
-    - I __root.tsx har vi lagt til "apiBase" som gir deg base-url til API-et
-    - Bruk RouteContext til å hente ut denne verdien (istedenfor å bruke getBaseUrl)
-
-    💭 
-    - Hvilke andre bruk kommer du på for Route Context?
-
-    📖 https://tanstack.com/router/v1/docs/framework/react/guide/router-context#using-the-router-context
-  */
   const cafes = Route.useLoaderData();
 
   return (

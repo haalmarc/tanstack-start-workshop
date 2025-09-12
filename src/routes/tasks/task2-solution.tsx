@@ -17,11 +17,12 @@ export const Route = createFileRoute("/tasks/task2-solution")({
   component: RouteComponent,
 });
 
+/* 
+  💭 
+  - Ta en titt på getBaseUrl. Hvorfor trengs det å ta hensyn til SSR?
+*/
+
 function RouteComponent() {
-  /* 
-    💭 
-    - Ta en titt på getBaseUrl. Hvorfor trengs det å ta hensyn til SSR?
-  */
   // 💡 Tar i bruk loaderData
   const cafes = Route.useLoaderData();
 
@@ -30,7 +31,7 @@ function RouteComponent() {
       <Title>Oppgave 2: Hent kafeer ☕️</Title>
       <ul>
         {cafes.map((cafe) => (
-          <CafeListItem key={cafe.id} cafe={cafe}></CafeListItem>
+          <CafeListItem key={cafe.id} cafe={cafe} />
         ))}
       </ul>
     </div>

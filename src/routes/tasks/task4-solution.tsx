@@ -4,7 +4,7 @@ import type { Cafe } from "~/server/db";
 import { getBaseUrl } from "~/utils/getBaseUrl";
 import { CafeListItemWithLink } from "~/components/CafeListItemWithLink";
 
-export const Route = createFileRoute("/tasks/task4")({
+export const Route = createFileRoute("/tasks/task4-solution")({
   loader: async () => {
     const api = new URL("/api/cafes", getBaseUrl());
     const res = await fetch(api);
@@ -16,16 +16,6 @@ export const Route = createFileRoute("/tasks/task4")({
   component: RouteComponent,
 });
 
-/* 
-  👉 Naviger til dynamisk rute
-  - Vi har allerede opprettet routen til task4-dynamic.$id.tsx
-
-  💭 
-  - Hvordan kan vi validere dynamiske id-er for å sikre at de er gyldige og trygge å bruke?
-
-  📖 https://tanstack.com/router/v1/docs/framework/react/guide/path-params#navigating-with-path-params
-*/
-
 function RouteComponent() {
   const cafes = Route.useLoaderData();
 
@@ -35,8 +25,12 @@ function RouteComponent() {
       <ul>
         {cafes.map((cafe) => (
           <CafeListItemWithLink key={cafe.id} cafe={cafe}>
-            {/* @ts-ignore */}
-            <Link>Besøk kafeen</Link>
+            {
+              // 💡 Legger til dynamisk variabel i "to" og sender med params
+            }
+            <Link to="/tasks/task4-dynamic/$id" params={{ id: cafe.id }}>
+              Besøk kafeen
+            </Link>
           </CafeListItemWithLink>
         ))}
       </ul>

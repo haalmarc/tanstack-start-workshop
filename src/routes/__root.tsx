@@ -89,7 +89,7 @@ function RootComponent() {
                 className: "font-bold",
               }}
             >
-              Task1
+              Oppgave1
             </Link>
             <Link
               to="/tasks/task1-solution"
@@ -107,7 +107,7 @@ function RootComponent() {
                 className: "font-bold",
               }}
             >
-              Task2
+              Oppgave2
             </Link>
             <Link
               to="/tasks/task2-solution"
@@ -116,6 +116,80 @@ function RootComponent() {
               }}
             >
               Løsning2
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks/task3"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave3
+            </Link>
+            <Link
+              to="/tasks/task3-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning3
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks/task4"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave4
+            </Link>
+            <Link
+              to="/tasks/task4-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning4
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks/task5/$id"
+              params={{ id: "5ddeee5b-2222-4069-86f4-0eebfa6b4d33" }}
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave5
+            </Link>
+            <Link
+              to="/tasks/task5-solution/$id"
+              params={{ id: "5ddeee5b-2222-4069-86f4-0eebfa6b4d33" }}
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning5
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks/task6"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave6
+            </Link>
+            <Link
+              to="/tasks/task6-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning6
             </Link>
           </NavItem>
         </ul>

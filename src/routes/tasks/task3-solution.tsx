@@ -18,16 +18,6 @@ export const Route = createFileRoute("/tasks/task3-solution")({
 });
 
 function RouteComponent() {
-  /* 
-    👉 Bruk global context, så du slipper å definere getBaseUrl per fetch
-    - I __root.tsx har vi lagt til "apiBase" som gir deg base-url til API-et
-    - Bruk RouteContext til å hente ut denne verdien (istedenfor å bruke getBaseUrl)
-
-    💭 
-    - Hvilke andre bruk kommer du på for Route Context?
-
-    📖 https://tanstack.com/router/v1/docs/framework/react/guide/router-context#using-the-router-context
-  */
   const cafes = Route.useLoaderData();
 
   return (
@@ -35,7 +25,7 @@ function RouteComponent() {
       <Title>Løsning 3: Route Context ♻️</Title>
       <ul>
         {cafes.map((cafe) => (
-          <CafeListItem key={cafe.id} cafe={cafe}></CafeListItem>
+          <CafeListItem key={cafe.id} cafe={cafe} />
         ))}
       </ul>
     </div>
