@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CafeListItem } from "~/components/CafeListItem";
+import { Title } from "~/components/Title";
 
 export const Route = createFileRoute("/tasks-router/task5/$id")({
   component: RouteComponent,
@@ -24,5 +25,10 @@ const mockCafe = {
 };
 
 function RouteComponent() {
-  return <CafeListItem cafe={mockCafe} />;
+  return (
+    <div>
+      <Title>Oppgave 5: Dynamisk data 🤖</Title>
+      <CafeListItem cafe={mockCafe} />
+    </div>
+  );
 }

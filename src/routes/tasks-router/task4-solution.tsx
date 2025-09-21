@@ -21,7 +21,7 @@ function RouteComponent() {
 
   return (
     <div>
-      <Title>Oppgave 4: Dynamisk rute 🤖</Title>
+      <Title>Løsning 4: Dynamisk rute 🤖</Title>
       <ul>
         {cafes.map((cafe) => (
           <CafeListItemWithLink key={cafe.id} cafe={cafe}>

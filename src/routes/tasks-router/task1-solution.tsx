@@ -15,7 +15,7 @@ export const Route = createFileRoute("/tasks-router/task1-solution")({
 function RouteComponent() {
   return (
     <div>
-      <Title>Løsning Oppgave1 🤘</Title>
+      <Title>Løsning 1: Navigering 🤘</Title>
       {
         // 💡 Tar i bruk Link
       }

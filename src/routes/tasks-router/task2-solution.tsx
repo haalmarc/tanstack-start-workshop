@@ -28,7 +28,7 @@ function RouteComponent() {
 
   return (
     <div>
-      <Title>Oppgave 2: Hent kafeer ☕️</Title>
+      <Title>Løsning 2: Hent kafeer ☕️</Title>
       <ul>
         {cafes.map((cafe) => (
           <CafeListItem key={cafe.id} cafe={cafe} />
