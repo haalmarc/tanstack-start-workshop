@@ -7,7 +7,7 @@ pnpm install
 pnpm dev
 ```
 
-Datafetching skjer mot api/cafes. Det resettes ved stopping av server og kjøre opp igjen med pnpm dev.
+Datafetching skjer mot api/cafes. Dataene resettes ved stopping av server og kjøre opp igjen.
 
 Du finner alle oppgavene under tasks-\*. TanStack Start er 95% TanStack Router. Oppgavene er delt opp i først TanStack Router, TanStack Router med Query og så TanStack Start.
 
@@ -17,37 +17,34 @@ Løsning finner du i task*-solution.tsx
 Symbolene er 👉 oppgave du koder, 💭 refleksjonsoppgave uten fasit og 📖 læringsmateriell.
 💡 i fasit betyr hvor koden er endret.
 
-##
+## Ekstra Oppgaver
 
-## Oppgaver
+Ferdig med alle oppgavene i tasks? Gratulerer! 🎉
 
-TODO oppgaver
+Da kan du begi deg ut på å utforske litt mer fritt. Her er noen forslag til videre dypdykk:
 
-TanStack Router
+### Flere strukturerte oppgaver
 
-- legg til en kafe. mutering og invalidering med react router
-- feiltilstand
+Ønsker flere strukturerte oppgaver? Da kan du bryne deg på Jokes-workshopen her.
 
-Query
+📖 https://tanstack.com/start/latest/docs/framework/react/reading-writing-file
 
-- når bruker en query med router?
-- hvordan få til lasting med query og router?
-- feiltilstand
-- caching
+### Middleware i TanStack Start
 
-Start
+Hva er egentlig middleware, og hvordan fungerer det i TanStack Start? Hvordan ville du håndtere å sjekke autentisering på en bruker? 
 
-- hvilken forskjell gjør server function?
-- ssr, cache. Hva er annerledes med router og query vs start?
+Ta en titt på docs, gjerne lag noen filer for å teste. 
 
----
+📖 https://tanstack.com/start/latest/docs/framework/react/middleware
 
-### Oppgave 0: Hvorfor TanStack Start?
+### Skjemaer i TanStack Start
 
-- Hva er forskjellen på TanStack Start og TanStack Router?
+Fra oppgavene har du allerede testet å legge til en kafé. Hvordan ville du lagd et produksjonsklart skjema, med rett validering, feilhåndtering og lastefunksjoner? 
 
-Se https://tanstack.com/start/latest/docs/framework/react/overview
+### Velge SSR eller SSG
 
-- Når bør du bruke TanStack Start over kun TanStack Router?
+Med Next.js kan du lett velge mellom dynamiske og statiske sider. Hvordan gjør du tilsvarende i TanStack Start - og når bør du velge hva? 
 
-- Når bør du ikke bruke TanStack Start?
+📖
+- https://tanstack.com/start/latest/docs/framework/react/selective-ssr
+- https://tanstack.com/start/latest/docs/framework/react/static-prerendering
