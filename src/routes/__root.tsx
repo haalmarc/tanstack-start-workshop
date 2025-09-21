@@ -216,6 +216,82 @@ function RootComponent() {
             </Link>
           </NavItem>
         </ul>
+        <hr className="mt-4 mb-4" />
+        <h2>Start</h2>
+        <ul className="flex gap-2 text-lg">
+          <NavItem>
+            <Link
+              to="/tasks-start/task1"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave1
+            </Link>
+            <Link
+              to="/tasks-start/task1-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning1
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks-start/task2"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave2
+            </Link>
+            <Link
+              to="/tasks-start/task2-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning2
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks-start/task3"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave3
+            </Link>
+            <Link
+              to="/tasks-start/task3-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning3
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link
+              to="/tasks-start/task4"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Oppgave4
+            </Link>
+            <Link
+              to="/tasks-start/task4-solution"
+              activeProps={{
+                className: "font-bold",
+              }}
+            >
+              Løsning4
+            </Link>
+          </NavItem>
+        </ul>
       </nav>
       <div className="p-2">
         <Outlet />
@@ -240,7 +316,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             activeOptions={{ exact: true }}
           >
             Home
-          </Link>{" "}
+          </Link>
         </div>
         <hr />
         {children}

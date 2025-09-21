@@ -13,6 +13,7 @@ async function fetchCafes(): Promise<Cafe[]> {
   }
   return res.json();
 }
+
 const postsQueryOptions = queryOptions({
   queryKey: ["posts"],
   queryFn: () => fetchCafes(),
@@ -20,6 +21,7 @@ const postsQueryOptions = queryOptions({
 
 export const Route = createFileRoute("/tasks-query/task1-solution")({
   loader: ({ context }) =>
+    // 💡 Byttet direkte fetch med å mate fetch inn i ensureQueryData
     context.queryClient.ensureQueryData(postsQueryOptions),
   component: RouteComponent,
 });
@@ -30,18 +32,20 @@ export const Route = createFileRoute("/tasks-query/task1-solution")({
   - Hvorfor ikke bare bruke useQuery alene?
   - Hva er forskjellen på å bruke useQuery og useSuspenseQuery?
 
-  📖 https://github.com/TanStack/router/discussions/1563
-
+  📖
+  - https://github.com/TanStack/router/discussions/1563
+  - https://tanstack.com/router/latest/docs/integrations/query#using-usesuspensequery-vs-usequery
 */
 
 function RouteComponent() {
+  // 💡 Henter data med useSuspenseQuery istedenfor loaderData
   const { data } = useSuspenseQuery(postsQueryOptions);
 
   return (
     <div>
       <Title>Løsning 1: TanStack Query med Router 🌴</Title>
       <ul>
-        {data?.map((cafe) => (
+        {data.map((cafe) => (
           <CafeListItemWithLink key={cafe.id} cafe={cafe}>
             <Link to="/tasks-router/task4-dynamic/$id" params={{ id: cafe.id }}>
               Besøk kafeen

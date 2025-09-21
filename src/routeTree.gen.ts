@@ -13,6 +13,14 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CafesIndexRouteImport } from './routes/cafes/index'
+import { Route as TasksStartTask4SolutionRouteImport } from './routes/tasks-start/task4-solution'
+import { Route as TasksStartTask4RouteImport } from './routes/tasks-start/task4'
+import { Route as TasksStartTask3SolutionRouteImport } from './routes/tasks-start/task3-solution'
+import { Route as TasksStartTask3RouteImport } from './routes/tasks-start/task3'
+import { Route as TasksStartTask2SolutionRouteImport } from './routes/tasks-start/task2-solution'
+import { Route as TasksStartTask2RouteImport } from './routes/tasks-start/task2'
+import { Route as TasksStartTask1SolutionRouteImport } from './routes/tasks-start/task1-solution'
+import { Route as TasksStartTask1RouteImport } from './routes/tasks-start/task1'
 import { Route as TasksRouterTask6SolutionRouteImport } from './routes/tasks-router/task6-solution'
 import { Route as TasksRouterTask6RouteImport } from './routes/tasks-router/task6'
 import { Route as TasksRouterTask4SolutionRouteImport } from './routes/tasks-router/task4-solution'
@@ -29,6 +37,7 @@ import { Route as CafesIdRouteImport } from './routes/cafes/$id'
 import { Route as TasksRouterTask5IdRouteImport } from './routes/tasks-router/task5.$id'
 import { Route as TasksRouterTask5SolutionIdRouteImport } from './routes/tasks-router/task5-solution.$id'
 import { Route as TasksRouterTask4DynamicIdRouteImport } from './routes/tasks-router/task4-dynamic.$id'
+import { ServerRoute as ApiWrongTypeCafesServerRouteImport } from './routes/api/wrong-type-cafes'
 import { ServerRoute as ApiCafesServerRouteImport } from './routes/api/cafes'
 import { ServerRoute as ApiCafesIdServerRouteImport } from './routes/api/cafes.$id'
 
@@ -42,6 +51,46 @@ const IndexRoute = IndexRouteImport.update({
 const CafesIndexRoute = CafesIndexRouteImport.update({
   id: '/cafes/',
   path: '/cafes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask4SolutionRoute = TasksStartTask4SolutionRouteImport.update({
+  id: '/tasks-start/task4-solution',
+  path: '/tasks-start/task4-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask4Route = TasksStartTask4RouteImport.update({
+  id: '/tasks-start/task4',
+  path: '/tasks-start/task4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask3SolutionRoute = TasksStartTask3SolutionRouteImport.update({
+  id: '/tasks-start/task3-solution',
+  path: '/tasks-start/task3-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask3Route = TasksStartTask3RouteImport.update({
+  id: '/tasks-start/task3',
+  path: '/tasks-start/task3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask2SolutionRoute = TasksStartTask2SolutionRouteImport.update({
+  id: '/tasks-start/task2-solution',
+  path: '/tasks-start/task2-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask2Route = TasksStartTask2RouteImport.update({
+  id: '/tasks-start/task2',
+  path: '/tasks-start/task2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask1SolutionRoute = TasksStartTask1SolutionRouteImport.update({
+  id: '/tasks-start/task1-solution',
+  path: '/tasks-start/task1-solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TasksStartTask1Route = TasksStartTask1RouteImport.update({
+  id: '/tasks-start/task1',
+  path: '/tasks-start/task1',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TasksRouterTask6SolutionRoute =
@@ -131,6 +180,11 @@ const TasksRouterTask4DynamicIdRoute =
     path: '/tasks-router/task4-dynamic/$id',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiWrongTypeCafesServerRoute = ApiWrongTypeCafesServerRouteImport.update({
+  id: '/api/wrong-type-cafes',
+  path: '/api/wrong-type-cafes',
+  getParentRoute: () => rootServerRouteImport,
+} as any)
 const ApiCafesServerRoute = ApiCafesServerRouteImport.update({
   id: '/api/cafes',
   path: '/api/cafes',
@@ -157,6 +211,14 @@ export interface FileRoutesByFullPath {
   '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
   '/tasks-router/task6': typeof TasksRouterTask6Route
   '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
+  '/tasks-start/task1': typeof TasksStartTask1Route
+  '/tasks-start/task1-solution': typeof TasksStartTask1SolutionRoute
+  '/tasks-start/task2': typeof TasksStartTask2Route
+  '/tasks-start/task2-solution': typeof TasksStartTask2SolutionRoute
+  '/tasks-start/task3': typeof TasksStartTask3Route
+  '/tasks-start/task3-solution': typeof TasksStartTask3SolutionRoute
+  '/tasks-start/task4': typeof TasksStartTask4Route
+  '/tasks-start/task4-solution': typeof TasksStartTask4SolutionRoute
   '/cafes': typeof CafesIndexRoute
   '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
   '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
@@ -177,6 +239,14 @@ export interface FileRoutesByTo {
   '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
   '/tasks-router/task6': typeof TasksRouterTask6Route
   '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
+  '/tasks-start/task1': typeof TasksStartTask1Route
+  '/tasks-start/task1-solution': typeof TasksStartTask1SolutionRoute
+  '/tasks-start/task2': typeof TasksStartTask2Route
+  '/tasks-start/task2-solution': typeof TasksStartTask2SolutionRoute
+  '/tasks-start/task3': typeof TasksStartTask3Route
+  '/tasks-start/task3-solution': typeof TasksStartTask3SolutionRoute
+  '/tasks-start/task4': typeof TasksStartTask4Route
+  '/tasks-start/task4-solution': typeof TasksStartTask4SolutionRoute
   '/cafes': typeof CafesIndexRoute
   '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
   '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
@@ -198,6 +268,14 @@ export interface FileRoutesById {
   '/tasks-router/task4-solution': typeof TasksRouterTask4SolutionRoute
   '/tasks-router/task6': typeof TasksRouterTask6Route
   '/tasks-router/task6-solution': typeof TasksRouterTask6SolutionRoute
+  '/tasks-start/task1': typeof TasksStartTask1Route
+  '/tasks-start/task1-solution': typeof TasksStartTask1SolutionRoute
+  '/tasks-start/task2': typeof TasksStartTask2Route
+  '/tasks-start/task2-solution': typeof TasksStartTask2SolutionRoute
+  '/tasks-start/task3': typeof TasksStartTask3Route
+  '/tasks-start/task3-solution': typeof TasksStartTask3SolutionRoute
+  '/tasks-start/task4': typeof TasksStartTask4Route
+  '/tasks-start/task4-solution': typeof TasksStartTask4SolutionRoute
   '/cafes/': typeof CafesIndexRoute
   '/tasks-router/task4-dynamic/$id': typeof TasksRouterTask4DynamicIdRoute
   '/tasks-router/task5-solution/$id': typeof TasksRouterTask5SolutionIdRoute
@@ -220,6 +298,14 @@ export interface FileRouteTypes {
     | '/tasks-router/task4-solution'
     | '/tasks-router/task6'
     | '/tasks-router/task6-solution'
+    | '/tasks-start/task1'
+    | '/tasks-start/task1-solution'
+    | '/tasks-start/task2'
+    | '/tasks-start/task2-solution'
+    | '/tasks-start/task3'
+    | '/tasks-start/task3-solution'
+    | '/tasks-start/task4'
+    | '/tasks-start/task4-solution'
     | '/cafes'
     | '/tasks-router/task4-dynamic/$id'
     | '/tasks-router/task5-solution/$id'
@@ -240,6 +326,14 @@ export interface FileRouteTypes {
     | '/tasks-router/task4-solution'
     | '/tasks-router/task6'
     | '/tasks-router/task6-solution'
+    | '/tasks-start/task1'
+    | '/tasks-start/task1-solution'
+    | '/tasks-start/task2'
+    | '/tasks-start/task2-solution'
+    | '/tasks-start/task3'
+    | '/tasks-start/task3-solution'
+    | '/tasks-start/task4'
+    | '/tasks-start/task4-solution'
     | '/cafes'
     | '/tasks-router/task4-dynamic/$id'
     | '/tasks-router/task5-solution/$id'
@@ -260,6 +354,14 @@ export interface FileRouteTypes {
     | '/tasks-router/task4-solution'
     | '/tasks-router/task6'
     | '/tasks-router/task6-solution'
+    | '/tasks-start/task1'
+    | '/tasks-start/task1-solution'
+    | '/tasks-start/task2'
+    | '/tasks-start/task2-solution'
+    | '/tasks-start/task3'
+    | '/tasks-start/task3-solution'
+    | '/tasks-start/task4'
+    | '/tasks-start/task4-solution'
     | '/cafes/'
     | '/tasks-router/task4-dynamic/$id'
     | '/tasks-router/task5-solution/$id'
@@ -281,6 +383,14 @@ export interface RootRouteChildren {
   TasksRouterTask4SolutionRoute: typeof TasksRouterTask4SolutionRoute
   TasksRouterTask6Route: typeof TasksRouterTask6Route
   TasksRouterTask6SolutionRoute: typeof TasksRouterTask6SolutionRoute
+  TasksStartTask1Route: typeof TasksStartTask1Route
+  TasksStartTask1SolutionRoute: typeof TasksStartTask1SolutionRoute
+  TasksStartTask2Route: typeof TasksStartTask2Route
+  TasksStartTask2SolutionRoute: typeof TasksStartTask2SolutionRoute
+  TasksStartTask3Route: typeof TasksStartTask3Route
+  TasksStartTask3SolutionRoute: typeof TasksStartTask3SolutionRoute
+  TasksStartTask4Route: typeof TasksStartTask4Route
+  TasksStartTask4SolutionRoute: typeof TasksStartTask4SolutionRoute
   CafesIndexRoute: typeof CafesIndexRoute
   TasksRouterTask4DynamicIdRoute: typeof TasksRouterTask4DynamicIdRoute
   TasksRouterTask5SolutionIdRoute: typeof TasksRouterTask5SolutionIdRoute
@@ -288,27 +398,31 @@ export interface RootRouteChildren {
 }
 export interface FileServerRoutesByFullPath {
   '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/wrong-type-cafes': typeof ApiWrongTypeCafesServerRoute
   '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRoutesByTo {
   '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/wrong-type-cafes': typeof ApiWrongTypeCafesServerRoute
   '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
   '/api/cafes': typeof ApiCafesServerRouteWithChildren
+  '/api/wrong-type-cafes': typeof ApiWrongTypeCafesServerRoute
   '/api/cafes/$id': typeof ApiCafesIdServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/cafes' | '/api/cafes/$id'
+  fullPaths: '/api/cafes' | '/api/wrong-type-cafes' | '/api/cafes/$id'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/cafes' | '/api/cafes/$id'
-  id: '__root__' | '/api/cafes' | '/api/cafes/$id'
+  to: '/api/cafes' | '/api/wrong-type-cafes' | '/api/cafes/$id'
+  id: '__root__' | '/api/cafes' | '/api/wrong-type-cafes' | '/api/cafes/$id'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
   ApiCafesServerRoute: typeof ApiCafesServerRouteWithChildren
+  ApiWrongTypeCafesServerRoute: typeof ApiWrongTypeCafesServerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -325,6 +439,62 @@ declare module '@tanstack/react-router' {
       path: '/cafes'
       fullPath: '/cafes'
       preLoaderRoute: typeof CafesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task4-solution': {
+      id: '/tasks-start/task4-solution'
+      path: '/tasks-start/task4-solution'
+      fullPath: '/tasks-start/task4-solution'
+      preLoaderRoute: typeof TasksStartTask4SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task4': {
+      id: '/tasks-start/task4'
+      path: '/tasks-start/task4'
+      fullPath: '/tasks-start/task4'
+      preLoaderRoute: typeof TasksStartTask4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task3-solution': {
+      id: '/tasks-start/task3-solution'
+      path: '/tasks-start/task3-solution'
+      fullPath: '/tasks-start/task3-solution'
+      preLoaderRoute: typeof TasksStartTask3SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task3': {
+      id: '/tasks-start/task3'
+      path: '/tasks-start/task3'
+      fullPath: '/tasks-start/task3'
+      preLoaderRoute: typeof TasksStartTask3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task2-solution': {
+      id: '/tasks-start/task2-solution'
+      path: '/tasks-start/task2-solution'
+      fullPath: '/tasks-start/task2-solution'
+      preLoaderRoute: typeof TasksStartTask2SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task2': {
+      id: '/tasks-start/task2'
+      path: '/tasks-start/task2'
+      fullPath: '/tasks-start/task2'
+      preLoaderRoute: typeof TasksStartTask2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task1-solution': {
+      id: '/tasks-start/task1-solution'
+      path: '/tasks-start/task1-solution'
+      fullPath: '/tasks-start/task1-solution'
+      preLoaderRoute: typeof TasksStartTask1SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tasks-start/task1': {
+      id: '/tasks-start/task1'
+      path: '/tasks-start/task1'
+      fullPath: '/tasks-start/task1'
+      preLoaderRoute: typeof TasksStartTask1RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tasks-router/task6-solution': {
@@ -443,6 +613,13 @@ declare module '@tanstack/react-router' {
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
+    '/api/wrong-type-cafes': {
+      id: '/api/wrong-type-cafes'
+      path: '/api/wrong-type-cafes'
+      fullPath: '/api/wrong-type-cafes'
+      preLoaderRoute: typeof ApiWrongTypeCafesServerRouteImport
+      parentRoute: typeof rootServerRouteImport
+    }
     '/api/cafes': {
       id: '/api/cafes'
       path: '/api/cafes'
@@ -487,6 +664,14 @@ const rootRouteChildren: RootRouteChildren = {
   TasksRouterTask4SolutionRoute: TasksRouterTask4SolutionRoute,
   TasksRouterTask6Route: TasksRouterTask6Route,
   TasksRouterTask6SolutionRoute: TasksRouterTask6SolutionRoute,
+  TasksStartTask1Route: TasksStartTask1Route,
+  TasksStartTask1SolutionRoute: TasksStartTask1SolutionRoute,
+  TasksStartTask2Route: TasksStartTask2Route,
+  TasksStartTask2SolutionRoute: TasksStartTask2SolutionRoute,
+  TasksStartTask3Route: TasksStartTask3Route,
+  TasksStartTask3SolutionRoute: TasksStartTask3SolutionRoute,
+  TasksStartTask4Route: TasksStartTask4Route,
+  TasksStartTask4SolutionRoute: TasksStartTask4SolutionRoute,
   CafesIndexRoute: CafesIndexRoute,
   TasksRouterTask4DynamicIdRoute: TasksRouterTask4DynamicIdRoute,
   TasksRouterTask5SolutionIdRoute: TasksRouterTask5SolutionIdRoute,
@@ -497,6 +682,7 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
   ApiCafesServerRoute: ApiCafesServerRouteWithChildren,
+  ApiWrongTypeCafesServerRoute: ApiWrongTypeCafesServerRoute,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)
