@@ -9,6 +9,7 @@ export const Route = createFileRoute("/tasks-router/task2")({
 /* 
   👉 Vis kafeer
   - Bruk en loader til å hente kafeer fra http://localhost:3000/api/cafes
+  -- Du kan bruke TypeScript-typen Cafe fra ~/server/db
   - Vis kafeene i en liste
   - Bruk getBaseUrl for å finne riktig base-url
 

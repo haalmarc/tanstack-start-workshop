@@ -9,6 +9,7 @@ export const Route = createFileRoute("/tasks-router/task5/$id")({
 /* 
   👉 Hent dynamisk data
   - Bytt ut å vise hardkodet kafe med å hente kafe-data basert på id
+  -- Du kan bruke API-endepunktet /api/cafes/:id
   - Bruk loader til å hente data. Du kan hente ut params i loaderen
 
   💭 
