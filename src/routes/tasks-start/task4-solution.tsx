@@ -55,11 +55,9 @@ export const Route = createFileRoute("/tasks-start/task4-solution")({
 });
 
 /*
-  👉 Oppdater listen med kafeer når du legger til en kafe
-  - Nå må du refreshe for å se ny kafe. Det er ikke optimalt.
-  -- Forbedre opplevelsen.
-
-  📖 https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#routes
+  💭
+  - Er det mulig å invalidere i serverfunksjoner?
+  - Hvordan kan du legge til optimistisk oppdatering i skjemaet?
 */
 
 function RouteComponent() {
@@ -75,6 +73,7 @@ function RouteComponent() {
     const rating = formData.get("rating") as string;
 
     await addCafe({ data: { name: name, location, rating } });
+    // 💡 Invaliderer loaderen for denne ruten
     await router.invalidate();
   }
 

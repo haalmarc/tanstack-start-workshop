@@ -11,7 +11,7 @@ export const Route = createFileRoute("/tasks-router/task1")({
 
   💭 - Legg merke til typing på navigasjonen. Hvordan vet IDE-en om en rute ikke fins?
 
-  📖 https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#navigation
+  📖 https://tanstack.com/router/latest/docs/framework/react/guide/navigation#link-component
 */
 
 function RouteComponent() {

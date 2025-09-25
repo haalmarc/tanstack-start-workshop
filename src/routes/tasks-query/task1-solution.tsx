@@ -21,7 +21,7 @@ const postsQueryOptions = queryOptions({
 
 export const Route = createFileRoute("/tasks-query/task1-solution")({
   loader: ({ context }) =>
-    // 💡 Byttet direkte fetch med å mate fetch inn i ensureQueryData
+    // 💡 Datalasting i loader betyr at data kan hentes før mount
     context.queryClient.ensureQueryData(postsQueryOptions),
   component: RouteComponent,
 });
@@ -38,7 +38,6 @@ export const Route = createFileRoute("/tasks-query/task1-solution")({
 */
 
 function RouteComponent() {
-  // 💡 Henter data med useSuspenseQuery istedenfor loaderData
   const { data } = useSuspenseQuery(postsQueryOptions);
 
   return (

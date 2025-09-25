@@ -12,9 +12,9 @@ export const Route = createFileRoute("/tasks-router/task2")({
   - Vis kafeene i en liste
   - Bruk getBaseUrl for å finne riktig base-url
 
-  💭 Er det noe forskjellig fra å bruke loaderData med TanStack Router versus TanStack Start?
+  💭 Hva er fordelene med å hente data på route-nivå vs komponent-nivå? 
 
-  📖 https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#routes
+  📖 https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#route-loaders
 */
 
 function RouteComponent() {

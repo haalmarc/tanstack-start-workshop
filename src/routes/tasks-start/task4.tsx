@@ -57,14 +57,14 @@ export const Route = createFileRoute("/tasks-start/task4")({
 /*
   👉 Oppdater listen med kafeer når du legger til en kafe
   - Nå må du refreshe for å se ny kafe. Det er ikke optimalt.
-  -- Forbedre opplevelsen.
+  -- Legg til invalidering.
 
   💭
   - Hvordan er forskjellen på å invalidere med TanStack Router
     kontra TanStack Query?
   - Bør du vise en loading state mens du refresher data?
 
-  📖 https://tanstack.com/start/latest/docs/framework/react/learn-the-basics#routes
+  📖 https://tanstack.com/router/latest/docs/framework/react/guide/data-mutations#invalidating-tanstack-router-after-a-mutation
 */
 
 function RouteComponent() {
