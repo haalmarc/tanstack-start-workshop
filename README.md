@@ -1,11 +1,38 @@
 # TanStack Start Workshop
 
+Denne workshopen lærer deg det viktigste du trenger å vite om TanStack Start.
+
+## Starte appen
+
 Start med å installere og kjøre opp app.
 
 ```
 pnpm install
 pnpm dev
 ```
+
+### Problemer med å kjøre appen? 
+
+- Mangler pnpm? 
+
+```bash
+npm install -g pnpm
+```
+
+- Feil node-versjon? (se `.nvmrc`). 
+
+```bash
+nvm use
+```
+
+- Finner ikke localhost:3000?
+
+Dobbeltsjekk at du ikke har andre apper kjørende allerede.
+
+
+
+
+## Oppgaver
 
 Datafetching skjer mot api/cafes. Dataene resettes ved stopping av server og kjøre opp igjen.
 
